@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    machine:
+      image: ubuntu-1604:201903-01
+    working_directory: ~/
+    docker:
+      - ruby:2.6.5-alpine
+    steps:
+      - checkout
+      - run:
+          name: "testing"
+          command: ruby ./lib/hello.rb
